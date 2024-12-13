@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daily Planner</h1>
+        </header>
+        <main>
+            <section class="task-form">
+                <h2>Add New Task</h2>
+                <form id="taskForm">
+                    <div>
+                        <label for="taskTitle">Title:</label>
+                        <input type="text" id="taskTitle" name="taskTitle" required>
+                    </div>
+                    <div>
+                        <label for="taskDescription">Description:</label>
+                        <textarea id="taskDescription" name="taskDescription"></textarea>
+                    </div>
+                    <div>
+                        <label for="taskDueDate">Due Date:</label>
+                        <input type="date" id="taskDueDate" name="taskDueDate" required>
+                    </div>
+                    <div>
+                        <label for="taskPriority">Priority:</label>
+                        <select id="taskPriority" name="taskPriority" required>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <button type="submit">Add Task</button>
+                </form>
+            </section>
+
+            <section class="task-controls">
+                <div class="filter">
+                    <label for="filterStatus">Filter by Status:</label>
+                    <select id="filterStatus">
+                        <option value="all">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <div class="filter">
+                    <label for="filterPriority">Filter by Priority:</label>
+                    <select id="filterPriority">
+                        <option value="all">All</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="sort">
+                    <label for="sortDueDate">Sort by Due Date:</label>
+                    <select id="sortDueDate">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="task-list">
+                <h2>Task List</h2>
+                <ul id="taskList"></ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="editTaskForm">
+                <div>
+                    <label for="editTaskTitle">Title:</label>
+                    <input type="text" id="editTaskTitle" name="editTaskTitle" required>
+                </div>
+                <div>
+                    <label for="editTaskDescription">Description:</label>
+                    <textarea id="editTaskDescription" name="editTaskDescription"></textarea>
+                </div>
+                <div>
+                    <label for="editTaskDueDate">Due Date:</label>
+                    <input type="date" id="editTaskDueDate" name="editTaskDueDate" required>
+                </div>
+                <div>
+                    <label for="editTaskPriority">Priority:</label>
+                    <select id="editTaskPriority" name="editTaskPriority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
